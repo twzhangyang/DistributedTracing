@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistributedTracing.Console"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistributedTracing.CollectTraces", "src\DistributedTracing.CollectTraces\DistributedTracing.CollectTraces.csproj", "{3BA778C0-577B-455C-B826-B6FDF14A6EFA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistributedTracing.Console.ApplicationInsights", "src\DistributedTracing.Console.ApplicationInsights\DistributedTracing.Console.ApplicationInsights.csproj", "{DC78EA83-F4C9-413B-A098-6843A7A3BDF2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,9 +28,14 @@ Global
 		{3BA778C0-577B-455C-B826-B6FDF14A6EFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BA778C0-577B-455C-B826-B6FDF14A6EFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BA778C0-577B-455C-B826-B6FDF14A6EFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC78EA83-F4C9-413B-A098-6843A7A3BDF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC78EA83-F4C9-413B-A098-6843A7A3BDF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC78EA83-F4C9-413B-A098-6843A7A3BDF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC78EA83-F4C9-413B-A098-6843A7A3BDF2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3BA778C0-577B-455C-B826-B6FDF14A6EFA} = {4C0965FC-037C-4BA0-9E80-3D45C27FD3BB}
 		{06DCF23D-26B7-49F4-8042-0251525968D6} = {4C0965FC-037C-4BA0-9E80-3D45C27FD3BB}
+		{DC78EA83-F4C9-413B-A098-6843A7A3BDF2} = {4C0965FC-037C-4BA0-9E80-3D45C27FD3BB}
 	EndGlobalSection
 EndGlobal
