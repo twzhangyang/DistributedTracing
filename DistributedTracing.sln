@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4C0965FC-037
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistributedTracing.Console", "src\DistributedTracing.Console\DistributedTracing.Console.csproj", "{06DCF23D-26B7-49F4-8042-0251525968D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistributedTracing.CollectTraces", "DistributedTracing.CollectTraces\DistributedTracing.CollectTraces.csproj", "{3BA778C0-577B-455C-B826-B6FDF14A6EFA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistributedTracing.CollectTraces", "src\DistributedTracing.CollectTraces\DistributedTracing.CollectTraces.csproj", "{3BA778C0-577B-455C-B826-B6FDF14A6EFA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
