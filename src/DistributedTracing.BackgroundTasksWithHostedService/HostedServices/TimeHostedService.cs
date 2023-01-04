@@ -38,9 +38,9 @@ namespace DistributedTracing.BackgroundTasksWithHostedService.HostedServices
             using (tc.StartOperation<RequestTelemetry>("workeroperation"))
             {
                 _logger.LogInformation("Timed Background Service is working.");
-                var res = httpClient.GetAsync("https://bing.com").Result.StatusCode;
+                var res = httpClient.GetAsync("https://google.com").Result.StatusCode;
                 _logger.LogInformation("bing http call completed with status:" + res);
-            }            
+            }
         }
 
         public Task StopAsync(CancellationToken cancellationToken)

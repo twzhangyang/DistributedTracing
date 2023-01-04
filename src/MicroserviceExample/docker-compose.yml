@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  zipkin:
+    image: openzipkin/zipkin
+    ports:
+      - 9411:9411
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    ports:
+      - 5672:5672
+      - 15672:15672
+
+  webapi:
+    build:
+      context: ../
+      dockerfile: ./MicroserviceExample/WebApi.Sender/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - RABBITMQ_HOSTNAME=rabbitmq
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+      - ZIPKIN_HOSTNAME=zipkin
+      - ASPNETCORE_URLS=http://+:5137
+    ports:
+      - 5137:5137
+    depends_on:
+      - rabbitmq
+      - zipkin
+
+  workerservice:
+    build:
+      context: ../
+      dockerfile: ./MicroserviceExample/WorkerService/Dockerfile
+    image: opentelemetry-example-workerservice
+    environment:
+      - DOTNET_ENVIRONMENT=Development
+      - RABBITMQ_HOSTNAME=rabbitmq
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+      - ZIPKIN_HOSTNAME=zipkin
+    restart: on-failure
+    depends_on:
+      - rabbitmq
+      - zipkin
