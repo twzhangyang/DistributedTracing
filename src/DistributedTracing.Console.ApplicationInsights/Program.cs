@@ -1,6 +1,4 @@
-﻿
-
-using Microsoft.ApplicationInsights;
+﻿using Microsoft.ApplicationInsights;
 using Microsoft.ApplicationInsights.Channel;
 using Microsoft.ApplicationInsights.DataContracts;
 using Microsoft.ApplicationInsights.Extensibility;
@@ -8,11 +6,8 @@ using Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector.QuickPuls
 using Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Net.Http;
-using System.Threading.Tasks;
 
-namespace ConsoleAppWithApplicationInsights
+namespace DistributedTracing.Console.ApplicationInsights
 {
     class Program
     {
@@ -22,7 +17,7 @@ namespace ConsoleAppWithApplicationInsights
             IServiceCollection services = new ServiceCollection();
 
             // Add or configure channel
-            services.AddSingleton<ITelemetryChannel>(new ServerTelemetryChannel() { StorageFolder = @"./applicationIngsightsStorage" });
+            services.AddSingleton<ITelemetryChannel>(new ServerTelemetryChannel() { StorageFolder = @"./applicationInsightsStorage" });
 
             // Add custom TelemetryInitializer
             services.AddSingleton<ITelemetryInitializer, MyCustomTelemetryInitializer>();

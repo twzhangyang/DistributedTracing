@@ -11,4 +11,8 @@
     <PackageReference Include="Microsoft.ApplicationInsights.WorkerService" Version="2.21.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="applicationInsightsStorage" />
+  </ItemGroup>
+
 </Project>

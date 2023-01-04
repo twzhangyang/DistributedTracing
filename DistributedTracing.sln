@@ -11,6 +11,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistributedTracing.CollectT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistributedTracing.Console.ApplicationInsights", "src\DistributedTracing.Console.ApplicationInsights\DistributedTracing.Console.ApplicationInsights.csproj", "{DC78EA83-F4C9-413B-A098-6843A7A3BDF2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "items", "items", "{687FD6D0-8056-4CE3-939B-0A4853FB09AA}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
