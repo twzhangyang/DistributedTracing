@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    ports:
+      - 5672:5672
+      - 15672:15672
+
+  ai-webapi:
+    build:
+      context: ../
+      dockerfile: ./ApplicationInsights/WebApi.Sender/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - RABBITMQ_HOSTNAME=rabbitmq
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+      - ASPNETCORE_URLS=http://+:6137
+    ports:
+      - 6137:6137
+    depends_on:
+      - rabbitmq
+
+  ai-workerservice:
+    build:
+      context: ../
+      dockerfile: ./ApplicationInsights/WorkerService.Subscriber/Dockerfile
+    image: opentelemetry-example-workerservice
+    environment:
+      - DOTNET_ENVIRONMENT=Development
+      - RABBITMQ_HOSTNAME=rabbitmq
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+    depends_on:
+      - rabbitmq
