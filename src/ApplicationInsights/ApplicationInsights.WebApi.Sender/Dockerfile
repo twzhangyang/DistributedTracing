@@ -4,18 +4,18 @@ EXPOSE 6137
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["ApplicationInsights/WebApi.Sender/WebApi.Sender.csproj", "ApplicationInsights/WebApi.Sender/WebApi.Sender.csproj"]
-COPY ["ApplicationInsights/Utils/Utils.csproj", "ApplicationInsights/Utils/Utils.csproj"]
-RUN dotnet restore "ApplicationInsights/WebApi.Sender/WebApi.Sender.csproj"
-RUN dotnet restore "ApplicationInsights/Utils/Utils.csproj"
+COPY ["ApplicationInsights/ApplicationInsights.WebApi.Sender/ApplicationInsights.WebApi.Sender.csproj", "ApplicationInsights/ApplicationInsights.WebApi.Sender/ApplicationInsights.WebApi.Sender.csproj"]
+COPY ["ApplicationInsights/ApplicationInsights.Utils/ApplicationInsights.Utils.csproj", "ApplicationInsights/ApplicationInsights.Utils/ApplicationInsights.Utils.csproj"]
+RUN dotnet restore "ApplicationInsights/ApplicationInsights.WebApi.Sender/ApplicationInsights.WebApi.Sender.csproj"
+RUN dotnet restore "ApplicationInsights/ApplicationInsights.Utils/ApplicationInsights.Utils.csproj"
 COPY . .
-WORKDIR "/src/ApplicationInsights/WebApi.Sender"
-RUN dotnet build "WebApi.Sender.csproj" -c Release -o /app/build
+WORKDIR "/src/ApplicationInsights/ApplicationInsights.WebApi.Sender"
+RUN dotnet build "ApplicationInsights.WebApi.Sender.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "WebApi.Sender.csproj" -c Release -o /app/publish
+RUN dotnet publish "ApplicationInsights.WebApi.Sender.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "WebApi.Sender.dll"]
+ENTRYPOINT ["dotnet", "ApplicationInsights.WebApi.Sender.dll"]
