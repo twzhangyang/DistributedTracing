@@ -4,8 +4,8 @@ EXPOSE 5137
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["MicroserviceExample/WebApi.Sender/WebApi.Sender.csproj", "MicroserviceExample/WebApi.Sender/"]
-COPY ["MicroserviceExample/Utils/Utils.csproj", "MicroserviceExample/Utils/"]
+COPY ["MicroserviceExample/WebApi.Sender/WebApi.Sender.csproj", "MicroserviceExample/WebApi.Sender/WebApi.Sender.csproj"]
+COPY ["MicroserviceExample/Utils/Utils.csproj", "MicroserviceExample/Utils/Utils.csproj"]
 RUN dotnet restore "MicroserviceExample/WebApi.Sender/WebApi.Sender.csproj"
 RUN dotnet restore "MicroserviceExample/Utils/Utils.csproj"
 COPY . .

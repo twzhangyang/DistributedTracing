@@ -32,7 +32,7 @@ services:
   workerservice:
     build:
       context: ../
-      dockerfile: ./MicroserviceExample/WorkerService/Dockerfile
+      dockerfile: ./MicroserviceExample/WorkerService.Subscriber/Dockerfile
     image: opentelemetry-example-workerservice
     environment:
       - DOTNET_ENVIRONMENT=Development

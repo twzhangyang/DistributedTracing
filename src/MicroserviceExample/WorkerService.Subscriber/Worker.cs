@@ -1,9 +1,6 @@
-using System.Threading;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Hosting;
 using Utils.Messaging;
 
-namespace WorkerService
+namespace WorkerService.Subscriber
 {
     public partial class Worker : BackgroundService
     {
