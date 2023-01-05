@@ -4,7 +4,6 @@
         <TargetFramework>net6.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-        <UserSecretsId>dotnet-WorkerService.Subscriber-6CF53059-E706-4682-9AA7-5BF1569A4143</UserSecretsId>
     </PropertyGroup>
 
     <ItemGroup>

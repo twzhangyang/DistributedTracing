@@ -40,7 +40,6 @@ services:
       - RABBITMQ_DEFAULT_USER=guest
       - RABBITMQ_DEFAULT_PASS=guest
       - ZIPKIN_HOSTNAME=zipkin
-    restart: on-failure
     depends_on:
       - rabbitmq
       - zipkin
